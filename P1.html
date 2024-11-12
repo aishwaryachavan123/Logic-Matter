@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details Filtering and Sorting</title>
+    <style>
+        /* Basic styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            cursor: pointer;
+        }
+        .highlight {
+            background-color: #e0ffe0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Score Filtering and Sorting</h2>
+    
+    <!-- Subject Dropdown -->
+    <label for="subject">Select Subject:</label>
+    <select id="subject">
+        <option value="">--Select Subject--</option>
+        <option value="English">English</option>
+        <option value="Maths">Maths</option>
+        <option value="Science">Science</option>
+        <option value="SocialScience">Social Science</option>
+    </select>
+    
+   
+    <div>
+        <label><input type="radio" name="filterType" value="above"> Above</label>
+        <label><input type="radio" name="filterType" value="below"> Below</label>
+        <label><input type="radio" name="filterType" value="between"> Between</label>
+    </div>
+    
+    
+    <div id="filterValues">
+        <input type="number" id="filterValue1" placeholder="Enter value">
+        <input type="number" id="filterValue2" placeholder="Enter second value" style="display: none;">
+    </div>
+    
+    <!-- Filter and Clear Buttons -->
+    <button onclick="applyFilter()">Filter</button>
+    <button onclick="clearFilter()">Clear</button>
+    
+    <!-- Student Data Table -->
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable('id')">S.No</th>
+                <th onclick="sortTable('name')">Name</th>
+                <th onclick="sortTable('English')">English</th>
+                <th onclick="sortTable('Maths')">Maths</th>
+                <th onclick="sortTable('Science')">Science</th>
+                <th onclick="sortTable('SocialScience')">Social Science</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+         
+        </tbody>
+    </table>
+    
+    <script src="p1.js"></script>
+</body>
+</html>
